@@ -1,0 +1,15 @@
+{
+    "name": "ahrimfakhriy/holdings",
+    "autoload": {
+        "psr-4": {
+            "Ahrimfakhriy\\Holdings\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ahrim Fakhriy",
+            "email": "ahrim45@gmail.com"
+        }
+    ],
+    "require": {}
+}
