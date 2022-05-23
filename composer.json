@@ -1,15 +1,41 @@
 {
     "name": "ahrimfakhriy/holdings",
-    "autoload": {
-        "psr-4": {
-            "Ahrimfakhriy\\Holdings\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Ahrim Fakhriy",
             "email": "ahrim45@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.1",
+        "illuminate/database": "^9.13"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "AhrimFakhriy\\Holdings\\": "src/",
+            "Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AhrimFakhriy\\Holdings\\Tests\\": ["tests/", "tests/src/"],
+            "Database\\Factories\\Tests\\": "tests/database/factories/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AhrimFakhriy\\Holdings\\HoldingsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    }
 }
